@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const likes_span = document.querySelector("#likes")
   const ul = document.querySelector("#comments")
 
+  	  	const del = document.createElement('button')
+
+
   fetch(imageURL)
   .then(res => res.json())
   .then(json => {
@@ -24,10 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
   	  json.comments.forEach(c => {
   	  	const li = document.createElement("li")
   	  	li.innerText = c.content
+  	  	li.append(add_del_button(c, li))
+
   	  	ul.append(li)
   	  })
 
   })
+
+	
+
 
   document.querySelector("#like_button").addEventListener("click", () => {
   	likes_span.innerText = parseInt(likes_span.innerText) + 1
@@ -52,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   		e.preventDefault()
   		const com_li = document.createElement("li")
   		com_li.innerText = e.target[0].value
+
   		ul.append(com_li)
 
   		fetch("https://randopic.herokuapp.com/comments", {
@@ -68,13 +77,30 @@ document.addEventListener('DOMContentLoaded', () => {
   		.then(res => res.json())
   		.then(json => {
   			console.log(json)
+  			
+	  		com_li.append(add_del_button(json, com_li))
   		})
 
   		frm.reset()
 
   })
+  function add_del_button(com, li) {
+		const del = document.createElement('button')
+  		del.innerText = "Delete"
+  		del.setAttribute("id", `${com.id}`) 
+
+  		del.addEventListener('click', ()=>{
+
+  			fetch(`https://randopic.herokuapp.com/comments/${del.id}`, {method: "DELETE"})
+  			.then(res => console.log(res))
+  			li.remove()
+			console.log(del.id)
+		}) 
+		return del 
+	}
 
 })
+
 
 
 
