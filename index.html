@@ -8,9 +8,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <style>
+    img {
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+    }
     input {
       font-size: 2rem;
     }
+    ul li
+    {
+      margin-bottom: 10px;
+      font-size: 20px;
+      list-style-type: none;
+    }
+
   </style>
 </head>
 
@@ -24,11 +36,12 @@
           <span>Likes:
             <span id="likes">Likes Go Here</span>
           </span>
-          <button id="like_button">Like</button>
+          <button id="like_button" class="btn btn-success">Like</button><br><br>
           <form id="comment_form">
-            <input id="comment_input" type="text" name="comment" placeholder="Add Comment"/>
-            <input type="submit" value="Submit"/>
-          </form>
+            <label>Add Comment Here</label>
+            <input class="form-control" id="comment_input" type="text" name="comment" placeholder="Add Comment"/>
+            <input type="submit" class="btn btn-success" value="Submit"/>
+          </form><br><br>
           <ul id="comments">
                <!-- <li> for each comment goes here -->
           </ul>
