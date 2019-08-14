@@ -51,7 +51,7 @@ For this challenge it is important to work iteratively: one feature at a time, b
 
 We have provided a series of prioritized steps to help you break down your approach this problem:
 
-## Step 1 - Get the Image Data
+<!-- ## Step 1 - Get the Image Data -->
 
 When the page loads, you will need to make a request to the API to get the data about your picture. The API follows RESTful conventions, but *make sure you read the API documentation* to familiarize yourself with the models, their associations, and the available endpoints of the API.
 
@@ -88,10 +88,10 @@ Example Response:
 
 Use the data from the API response to change what's currently on the page (take a look at the already provided `index.html`). You will need to add/update:
 
-- the image url
-- the image name
-- the number of likes
-- any comments in an unordered list
+<!-- - the image url -->
+<!-- - the image name -->
+<!-- - the number of likes -->
+<!-- - any comments in an unordered list -->
 
 (If you cannot get your fetch request to work correctly, you can  use the example response above to append content to the DOM and attempt the subsequent steps)
 
